@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5I-UX-ia3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--臺北市立動物園-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AreaViewController" customModule="PracticeProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DcW-M6-HWt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="areaCell" rowHeight="180" id="J56-A7-wsv">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J56-A7-wsv" id="zm0-Qi-TlE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Oy-bX-4By">
+                                                    <rect key="frame" x="16" y="16" width="130" height="148"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="GUU-pl-RAe"/>
+                                                        <constraint firstAttribute="width" secondItem="4Oy-bX-4By" secondAttribute="height" multiplier="1:1" id="pN3-fD-HHH"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="無尾熊館" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87l-Cg-Kky">
+                                                    <rect key="frame" x="162" y="24" width="236" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzE-fV-8ON">
+                                                    <rect key="frame" x="162" y="81" width="195" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="無休館資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUc-r7-KKc">
+                                                    <rect key="frame" x="162" y="138" width="236" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cUI-ZP-gWS">
+                                                    <rect key="frame" x="373" y="79.5" width="25" height="21.5"/>
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="UCL-82-11O"/>
+                                                        <constraint firstAttribute="width" constant="25" id="Uib-Ok-gM4"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vzE-fV-8ON" firstAttribute="leading" secondItem="4Oy-bX-4By" secondAttribute="trailing" constant="16" id="0fD-Ti-VXl"/>
+                                                <constraint firstItem="cUI-ZP-gWS" firstAttribute="leading" secondItem="vzE-fV-8ON" secondAttribute="trailing" constant="16" id="3EQ-fm-P2r"/>
+                                                <constraint firstItem="vzE-fV-8ON" firstAttribute="centerY" secondItem="zm0-Qi-TlE" secondAttribute="centerY" id="E0n-YI-hVb"/>
+                                                <constraint firstAttribute="bottom" secondItem="4Oy-bX-4By" secondAttribute="bottom" constant="16" id="GxE-08-pKS"/>
+                                                <constraint firstAttribute="trailing" secondItem="cUI-ZP-gWS" secondAttribute="trailing" constant="16" id="K79-bu-Ngi"/>
+                                                <constraint firstAttribute="bottom" secondItem="HUc-r7-KKc" secondAttribute="bottom" constant="24" id="NbD-JR-hFm"/>
+                                                <constraint firstItem="HUc-r7-KKc" firstAttribute="leading" secondItem="4Oy-bX-4By" secondAttribute="trailing" constant="16" id="PzH-qn-vdb"/>
+                                                <constraint firstItem="4Oy-bX-4By" firstAttribute="leading" secondItem="zm0-Qi-TlE" secondAttribute="leading" constant="16" id="QQe-Au-by6"/>
+                                                <constraint firstItem="87l-Cg-Kky" firstAttribute="top" secondItem="zm0-Qi-TlE" secondAttribute="top" constant="24" id="R58-8Z-lH1"/>
+                                                <constraint firstItem="cUI-ZP-gWS" firstAttribute="centerY" secondItem="zm0-Qi-TlE" secondAttribute="centerY" id="aLA-SL-zmd"/>
+                                                <constraint firstItem="87l-Cg-Kky" firstAttribute="leading" secondItem="4Oy-bX-4By" secondAttribute="trailing" constant="16" id="eI5-l7-2Il"/>
+                                                <constraint firstItem="4Oy-bX-4By" firstAttribute="top" secondItem="zm0-Qi-TlE" secondAttribute="top" constant="16" id="mNi-80-vzL"/>
+                                                <constraint firstAttribute="trailing" secondItem="HUc-r7-KKc" secondAttribute="trailing" constant="16" id="rja-34-1sx"/>
+                                                <constraint firstAttribute="trailing" secondItem="87l-Cg-Kky" secondAttribute="trailing" constant="16" id="uYn-dg-rc3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gZX-qj-SoT" kind="show" id="aaj-Bv-fWO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vNT-1n-rkE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BxN-4M-qYa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DcW-M6-HWt" secondAttribute="bottom" id="Rva-TF-P8f"/>
+                            <constraint firstItem="DcW-M6-HWt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xko-G8-Aoo"/>
+                            <constraint firstItem="DcW-M6-HWt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfL-ul-TsN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DcW-M6-HWt" secondAttribute="trailing" id="yhy-xP-hGe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="臺北市立動物園" id="jUI-oo-9gO"/>
+                    <connections>
+                        <outlet property="tableView" destination="DcW-M6-HWt" id="rRt-NY-T4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.69565217391312" y="97.767857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HyF-cb-TIv">
+            <objects>
+                <viewController id="gZX-qj-SoT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LB6-Q6-pEi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="h5v-4s-zg9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jxP-jA-Xfe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3l8-D2-oab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b3X-OH-yN1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P5I-UX-ia3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NS3-Sh-UY0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kqC-cU-gb0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3S-bD-thh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
