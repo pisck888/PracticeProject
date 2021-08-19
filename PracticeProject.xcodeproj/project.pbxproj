@@ -9,12 +9,23 @@
 /* Begin PBXBuildFile section */
 		009AF45C26CB66D8001FEF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF45B26CB66D8001FEF6A /* AppDelegate.swift */; };
 		009AF45E26CB66D8001FEF6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF45D26CB66D8001FEF6A /* SceneDelegate.swift */; };
-		009AF46026CB66D8001FEF6A /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF45F26CB66D8001FEF6A /* AreaViewController.swift */; };
+		009AF46026CB66D8001FEF6A /* AreaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF45F26CB66D8001FEF6A /* AreaListViewController.swift */; };
 		009AF46326CB66D8001FEF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009AF46126CB66D8001FEF6A /* Main.storyboard */; };
 		009AF46526CB66D9001FEF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009AF46426CB66D9001FEF6A /* Assets.xcassets */; };
 		009AF46826CB66D9001FEF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009AF46626CB66D9001FEF6A /* LaunchScreen.storyboard */; };
 		009AF47226CB9284001FEF6A /* AreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47126CB9284001FEF6A /* AreaData.swift */; };
-		009AF47626CBA22E001FEF6A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47526CBA22E001FEF6A /* APIManager.swift */; };
+		009AF47626CBA22E001FEF6A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47526CBA22E001FEF6A /* APIService.swift */; };
+		009AF47826CBB64F001FEF6A /* AreaListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47726CBB64F001FEF6A /* AreaListTableViewCell.swift */; };
+		009AF47C26CC9DD2001FEF6A /* AreaPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47B26CC9DD2001FEF6A /* AreaPageViewModel.swift */; };
+		009AF47E26CC9F28001FEF6A /* AreaPageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47D26CC9F28001FEF6A /* AreaPageCellViewModel.swift */; };
+		009AF48026CCB658001FEF6A /* AreaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF47F26CCB658001FEF6A /* AreaDetailViewController.swift */; };
+		009AF48226CCBAD9001FEF6A /* AreaDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48126CCBAD9001FEF6A /* AreaDetailTableViewCell.swift */; };
+		009AF48426CCD880001FEF6A /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48326CCD880001FEF6A /* PlantData.swift */; };
+		009AF48626CCDF7D001FEF6A /* PlantListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48526CCDF7D001FEF6A /* PlantListTableViewCell.swift */; };
+		009AF48826CCF7D2001FEF6A /* AreaDetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48726CCF7D2001FEF6A /* AreaDetailPageViewModel.swift */; };
+		009AF48A26CCFBD6001FEF6A /* PlantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48926CCFBD6001FEF6A /* PlantCellViewModel.swift */; };
+		009AF48C26CDF08B001FEF6A /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48B26CDF08B001FEF6A /* PlantDetailViewController.swift */; };
+		009AF48E26CDF644001FEF6A /* PlantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AF48D26CDF644001FEF6A /* PlantDetailTableViewCell.swift */; };
 		91AEBF8E2498C1DD3BD573A7 /* Pods_PracticeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F9DE397F269A37186876B /* Pods_PracticeProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,13 +33,24 @@
 		009AF45826CB66D8001FEF6A /* PracticeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009AF45B26CB66D8001FEF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		009AF45D26CB66D8001FEF6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		009AF45F26CB66D8001FEF6A /* AreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
+		009AF45F26CB66D8001FEF6A /* AreaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaListViewController.swift; sourceTree = "<group>"; };
 		009AF46226CB66D8001FEF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		009AF46426CB66D9001FEF6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		009AF46726CB66D9001FEF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		009AF46926CB66D9001FEF6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		009AF47126CB9284001FEF6A /* AreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaData.swift; sourceTree = "<group>"; };
-		009AF47526CBA22E001FEF6A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		009AF47526CBA22E001FEF6A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		009AF47726CBB64F001FEF6A /* AreaListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaListTableViewCell.swift; sourceTree = "<group>"; };
+		009AF47B26CC9DD2001FEF6A /* AreaPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPageViewModel.swift; sourceTree = "<group>"; };
+		009AF47D26CC9F28001FEF6A /* AreaPageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPageCellViewModel.swift; sourceTree = "<group>"; };
+		009AF47F26CCB658001FEF6A /* AreaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaDetailViewController.swift; sourceTree = "<group>"; };
+		009AF48126CCBAD9001FEF6A /* AreaDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaDetailTableViewCell.swift; sourceTree = "<group>"; };
+		009AF48326CCD880001FEF6A /* PlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
+		009AF48526CCDF7D001FEF6A /* PlantListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListTableViewCell.swift; sourceTree = "<group>"; };
+		009AF48726CCF7D2001FEF6A /* AreaDetailPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaDetailPageViewModel.swift; sourceTree = "<group>"; };
+		009AF48926CCFBD6001FEF6A /* PlantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCellViewModel.swift; sourceTree = "<group>"; };
+		009AF48B26CDF08B001FEF6A /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
+		009AF48D26CDF644001FEF6A /* PlantDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		67BFA2CB7639DF7D44F3A420 /* Pods-PracticeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeProject.release.xcconfig"; path = "Target Support Files/Pods-PracticeProject/Pods-PracticeProject.release.xcconfig"; sourceTree = "<group>"; };
 		A00F9DE397F269A37186876B /* Pods_PracticeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PracticeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFE5C3922D89B4EA33B0FC0 /* Pods-PracticeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeProject.debug.xcconfig"; path = "Target Support Files/Pods-PracticeProject/Pods-PracticeProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +89,7 @@
 		009AF45A26CB66D8001FEF6A /* PracticeProject */ = {
 			isa = PBXGroup;
 			children = (
+				009AF47926CBBE00001FEF6A /* ViewModel */,
 				009AF47426CBA1D4001FEF6A /* Networking */,
 				009AF47326CB9C69001FEF6A /* Controller */,
 				009AF47026CB6D04001FEF6A /* View */,
@@ -84,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				009AF47126CB9284001FEF6A /* AreaData.swift */,
+				009AF48326CCD880001FEF6A /* PlantData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,6 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				009AF46126CB66D8001FEF6A /* Main.storyboard */,
+				009AF47726CBB64F001FEF6A /* AreaListTableViewCell.swift */,
+				009AF48126CCBAD9001FEF6A /* AreaDetailTableViewCell.swift */,
+				009AF48526CCDF7D001FEF6A /* PlantListTableViewCell.swift */,
+				009AF48D26CDF644001FEF6A /* PlantDetailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,7 +127,9 @@
 		009AF47326CB9C69001FEF6A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				009AF45F26CB66D8001FEF6A /* AreaViewController.swift */,
+				009AF45F26CB66D8001FEF6A /* AreaListViewController.swift */,
+				009AF47F26CCB658001FEF6A /* AreaDetailViewController.swift */,
+				009AF48B26CDF08B001FEF6A /* PlantDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,9 +137,20 @@
 		009AF47426CBA1D4001FEF6A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				009AF47526CBA22E001FEF6A /* APIManager.swift */,
+				009AF47526CBA22E001FEF6A /* APIService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		009AF47926CBBE00001FEF6A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				009AF47B26CC9DD2001FEF6A /* AreaPageViewModel.swift */,
+				009AF47D26CC9F28001FEF6A /* AreaPageCellViewModel.swift */,
+				009AF48726CCF7D2001FEF6A /* AreaDetailPageViewModel.swift */,
+				009AF48926CCFBD6001FEF6A /* PlantCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0F4B9049053EEBBACB5ABD1B /* Pods */ = {
@@ -243,11 +284,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009AF47826CBB64F001FEF6A /* AreaListTableViewCell.swift in Sources */,
 				009AF47226CB9284001FEF6A /* AreaData.swift in Sources */,
-				009AF46026CB66D8001FEF6A /* AreaViewController.swift in Sources */,
-				009AF47626CBA22E001FEF6A /* APIManager.swift in Sources */,
+				009AF46026CB66D8001FEF6A /* AreaListViewController.swift in Sources */,
+				009AF47C26CC9DD2001FEF6A /* AreaPageViewModel.swift in Sources */,
+				009AF47626CBA22E001FEF6A /* APIService.swift in Sources */,
+				009AF48626CCDF7D001FEF6A /* PlantListTableViewCell.swift in Sources */,
 				009AF45C26CB66D8001FEF6A /* AppDelegate.swift in Sources */,
+				009AF48026CCB658001FEF6A /* AreaDetailViewController.swift in Sources */,
+				009AF48C26CDF08B001FEF6A /* PlantDetailViewController.swift in Sources */,
 				009AF45E26CB66D8001FEF6A /* SceneDelegate.swift in Sources */,
+				009AF48426CCD880001FEF6A /* PlantData.swift in Sources */,
+				009AF48A26CCFBD6001FEF6A /* PlantCellViewModel.swift in Sources */,
+				009AF47E26CC9F28001FEF6A /* AreaPageCellViewModel.swift in Sources */,
+				009AF48226CCBAD9001FEF6A /* AreaDetailTableViewCell.swift in Sources */,
+				009AF48E26CDF644001FEF6A /* PlantDetailTableViewCell.swift in Sources */,
+				009AF48826CCF7D2001FEF6A /* AreaDetailPageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
