@@ -6,40 +6,37 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class AreaListViewController: UIViewController {
 
     let viewModel = AreaPageViewModel()
+
+    let disposeBag = DisposeBag()
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNavigationBar()
-
-        viewModel.reloadTableViewClosure = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
-        
-        viewModel.updateLoadingStatus = { [weak self] () in
-             DispatchQueue.main.async {
-               let isLoading = self?.viewModel.isLoading ?? false
-               if isLoading {
-                 self?.activityIndicator.startAnimating()
-                 self?.tableView.alpha = 0.0
-               }else {
-                 self?.activityIndicator.stopAnimating()
-                 self?.tableView.alpha = 1.0
-               }
-             }
-           }
-
-
+        setupBindings()
         viewModel.fetchAreaData()
+    }
+
+    private func setupBindings() {
+        viewModel.isLoading.bind(to: activityIndicator.rx.isAnimating).disposed(by: disposeBag)
+        viewModel.isLoading.bind(to: tableView.rx.isHidden).disposed(by: disposeBag)
+
+        viewModel.areaData.bind(to: tableView.rx.items(cellIdentifier: "areaCell", cellType: AreaListTableViewCell.self)) { row, viewModel, cell in
+            cell.setup(viewModel: viewModel)
+        }.disposed(by: disposeBag)
+
+        tableView.rx.modelSelected(AreaPageCellViewModel.self).subscribe { [weak self] viewModel in
+            self?.performSegue(withIdentifier: "SegueToAreaDetailPage", sender: viewModel.element)
+        }.disposed(by: disposeBag)
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,29 +55,5 @@ class AreaListViewController: UIViewController {
         navigationController?.navigationBar.layer.shadowRadius = 4.0
         navigationController?.navigationBar.layer.shadowOpacity = 0.5
         navigationController?.navigationBar.layer.masksToBounds = false
-    }
-}
-
-extension AreaListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfCells
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell", for: indexPath) as? AreaListTableViewCell
-
-        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-
-        cell?.setup(viewModel: cellViewModel)
-
-        return cell ?? AreaListTableViewCell()
-    }
-}
-
-extension AreaListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        performSegue(withIdentifier: "SegueToAreaDetailPage", sender: cellViewModel)
     }
 }

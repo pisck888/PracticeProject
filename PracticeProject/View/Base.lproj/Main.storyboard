@@ -86,10 +86,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vNT-1n-rkE"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BxN-4M-qYa"/>
-                                </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="25H-OU-1Go">
                                 <rect key="frame" x="0.0" y="426" width="414" height="44"/>
