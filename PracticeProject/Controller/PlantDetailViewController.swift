@@ -6,35 +6,29 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PlantDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel: PlantCellViewModel?
+    let disposeBag = DisposeBag()
+
+    let viewModel: ReplaySubject<[PlantCellViewModel]> = ReplaySubject.create(bufferSize: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupBindings()
     }
 
     @IBAction func pressBackButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 
-}
-
-extension PlantDetailViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlantDetailTableViewCell", for: indexPath) as? PlantDetailTableViewCell
-
-        if let viewModel = viewModel {
-            cell?.setup(viewModel: viewModel)
-        }
-        return cell ?? PlantDetailTableViewCell()
+    func setupBindings() {
+        viewModel.bind(to: tableView.rx.items(cellIdentifier: "PlantDetailTableViewCell", cellType: PlantDetailTableViewCell.self)) { row, viewModel, cell in
+            cell.setup(viewModel: viewModel)
+        }.disposed(by: disposeBag)
     }
 }

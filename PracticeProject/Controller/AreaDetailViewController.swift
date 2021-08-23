@@ -30,7 +30,9 @@ class AreaDetailViewController: UIViewController {
             guard let vc = segue.destination as? PlantDetailViewController else {
                 return
             }
-            vc.viewModel = sender as? PlantCellViewModel
+            if let viewModel = sender as? PlantCellViewModel {
+                vc.viewModel.onNext([viewModel])
+            }
             vc.navigationItem.title = (sender as? PlantCellViewModel)?.nameCh
         }
     }

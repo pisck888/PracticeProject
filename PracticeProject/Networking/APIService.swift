@@ -32,20 +32,20 @@ class APIService {
         }
     }
 
-    func getAreaData(completionHandler: @escaping (AreaData) -> Void) {
-
-        let url = "https://data.taipei/api/v1/dataset/5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a?scope=resourceAquire"
-
-        AF.request(url, method: .get, encoding: URLEncoding.default)
-            .responseDecodable(of: AreaData.self) { response in
-                switch response.result {
-                case .success(let areaData):
-                    completionHandler(areaData)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-    }
+//    func getAreaData(completionHandler: @escaping (AreaData) -> Void) {
+//
+//        let url = "https://data.taipei/api/v1/dataset/5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a?scope=resourceAquire"
+//
+//        AF.request(url, method: .get, encoding: URLEncoding.default)
+//            .responseDecodable(of: AreaData.self) { response in
+//                switch response.result {
+//                case .success(let areaData):
+//                    completionHandler(areaData)
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
 
     func getPlantData(completionHandler: @escaping (PlantData) -> Void) {
 

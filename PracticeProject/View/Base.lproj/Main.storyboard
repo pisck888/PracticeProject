@@ -424,10 +424,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="ecd-UT-Yjh" id="URF-zC-lkb"/>
-                                    <outlet property="delegate" destination="ecd-UT-Yjh" id="6d3-jB-ExA"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YGG-cy-gJG"/>
