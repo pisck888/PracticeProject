@@ -6,23 +6,61 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-class AreaDetailViewController: UIViewController {
+class AreaDetailViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var viewModel = AreaDetailPageViewModel()
+
+    let disposeBag = DisposeBag()
+
+    let dataSource = RxTableViewSectionedReloadDataSource<MultipleSectionModel> { dataSource, tableView, indexPath, item in
+        switch dataSource[indexPath] {
+        case let .AreaPageCellViewModel(areaDetailData):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AreaDetailTableViewCell", for: indexPath) as? AreaDetailTableViewCell
+            cell?.setup(viewModel: areaDetailData)
+            return cell ?? AreaDetailTableViewCell()
+        case let .PlantCellViewModel(plantListData):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PlantListTableViewCell", for: indexPath) as? PlantListTableViewCell
+            cell?.setup(viewModel: plantListData)
+            return cell ?? PlantListTableViewCell()
+        }
+    } titleForHeaderInSection: {
+        dataSource, index in
+        let section = dataSource[index]
+        return section.title
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel.reloadTableViewClosure = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
-
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        setupBindings()
         viewModel.fetchPlantData()
+    }
+
+    override func viewDidLayoutSubviews() {
+        activityIndicator.center = view.center
+    }
+
+    func setupBindings() {
+        viewModel.isLoading.bind(to: activityIndicator.rx.isAnimating).disposed(by: disposeBag)
+        viewModel.isLoading.bind(to: tableView.rx.isHidden).disposed(by: disposeBag)
+
+        viewModel.sectionsData.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+
+        tableView.rx.modelSelected(SectionItem.self).subscribe { [weak self] viewModel in
+            switch viewModel.element {
+            case let .PlantCellViewModel(viewModel):
+                self?.performSegue(withIdentifier: "SegueToPlantDetailPage", sender: viewModel)
+            default:
+                break
+            }
+        }.disposed(by: disposeBag)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,12 +80,7 @@ class AreaDetailViewController: UIViewController {
     }
 }
 
-extension AreaDetailViewController: UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        2
-    }
-
+extension AreaDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
         case 0:
@@ -73,37 +106,5 @@ extension AreaDetailViewController: UITableViewDataSource {
         default:
             return 60
         }
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
-            return viewModel.numberOfCells
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AreaDetailTableViewCell", for: indexPath) as? AreaDetailTableViewCell
-            if let viewModel = viewModel.areaDetail {
-                cell?.setup(viewModel: viewModel)
-            }
-            return cell ?? AreaDetailTableViewCell()
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PlantListTableViewCell", for: indexPath) as? PlantListTableViewCell
-            let viewModel = viewModel.getCellViewModel(at: indexPath)
-            cell?.setup(viewModel: viewModel)
-            return cell ?? PlantListTableViewCell()
-        }
-    }
-}
-
-extension AreaDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        performSegue(withIdentifier: "SegueToPlantDetailPage", sender: cellViewModel)
     }
 }

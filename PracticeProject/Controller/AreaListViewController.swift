@@ -24,6 +24,9 @@ class AreaListViewController: UIViewController {
         setupBindings()
         viewModel.fetchAreaData()
     }
+    override func viewDidLayoutSubviews() {
+        activityIndicator.center = view.center
+    }
 
     private func setupBindings() {
         viewModel.isLoading.bind(to: activityIndicator.rx.isAnimating).disposed(by: disposeBag)
